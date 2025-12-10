@@ -1,0 +1,30 @@
+# Jupyter
+jupyter
+jupyterlab
+notebook
+ipywidgets
+
+# General data
+numpy
+pandas
+tabulate
+tqdm
+psutil
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Scikit-learn and UMAP
+scikit-learn
+umap-learn
+
+# XML parsing
+lxml
+
+# requests
+requests
+
+# Genetic algorithm
+pygad

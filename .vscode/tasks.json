@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Create venv",
+            "type": "shell",
+            "command": "python3 -m venv .venv",
+            "presentation": { "reveal": "always" }
+        },
+        {
+            "label": "Install requirements",
+            "type": "shell",
+            "command": "source .venv/bin/activate && python -m pip install --upgrade pip && pip install -r requirements.txt",
+            "presentation": { "reveal": "always" }
+        },
+        {
+            "label": "Start Jupyter Lab",
+            "type": "shell",
+            "command": "source .venv/bin/activate && jupyter lab",
+            "isBackground": false,
+            "presentation": { "reveal": "always" }
+        }
+    ]
+}

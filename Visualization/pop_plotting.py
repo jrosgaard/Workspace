@@ -172,13 +172,12 @@ def plot_quad_init():
     import matplotlib.pyplot as plt
 
     # create subplots    
-    fig, axes = plt.subplots(2, 2, figsize=(10, 8))
+    fig, axes = plt.subplots(2, 2, figsize=(10, 8), gridspec_kw={'hspace': 0.4, 'wspace': 0.2})
 
     return fig, axes
 
-
-# Population plotting function for the slider notebook
 def plot_quad_update(axes, t, tau, fitness_history, x, y, z, population1, population2, population3, s_1, s_2, title="Populations and Fitness", yrange=None):
+    # Population plotting function for the slider notebook
     """
     Plots the fitness over generations.
 
@@ -197,11 +196,9 @@ def plot_quad_update(axes, t, tau, fitness_history, x, y, z, population1, popula
     for ax in axes.ravel():
         ax.clear()
 
-
     time = t
 
     # create subplots
-    
     ax1.plot(t, x, color='blue', label='x(t)')
     ax1.plot(t, y, color='red', label='y(t)')
     ax1.plot(t, z, color='green', label='z(t)')
@@ -258,3 +255,65 @@ def plot_quad_update(axes, t, tau, fitness_history, x, y, z, population1, popula
     ax4.legend(loc='upper right')
 
     axes[0, 0].figure.suptitle(title)
+
+def plot_doub_init():
+    import os
+    import matplotlib.pyplot as plt
+
+    # create subplots    
+    fig, axes = plt.subplots(2, 1, figsize=(6, 8), gridspec_kw={'hspace': 0.6})
+
+    return fig, axes
+
+def plot_doub_update(axes, t, tau, x, y, z, population1, population2, population3, s_1, s_2, title="Populations and Fitness", yrange=None):
+    # Population plotting function for the slider notebook
+    """
+    Plots the fitness over generations.
+
+    Parameters:
+    population1 (list): A list of population values for the first population over each generation.
+    population2 (list): A list of population values for the second population over each generation.
+    population3 (list): A list of population values for the third population over each generation.
+    fitness_history (list): A list of fitness values over each generation.
+    """
+    import os
+    import matplotlib.pyplot as plt
+
+    # unpack axes
+    ax1, ax2 = axes.ravel()
+
+    for ax in axes.ravel():
+        ax.clear()
+
+
+    time = t
+
+    # create subplots
+    
+    ax1.plot(t, x, color='blue', label='x(t)')
+    ax1.plot(t, y, color='red', label='y(t)')
+    ax1.plot(t, z, color='green', label='z(t)')
+    ax1.set_title("Populations over Time")
+    ax1.set_xlabel('Time')
+    ax1.set_ylabel('Population')
+    
+    yrange_pop = None
+    if yrange_pop is not None:
+        ax1.set_ylim(yrange_pop)
+    ax1.grid(True)
+    ax1.legend(loc='upper right')
+    
+    ax2.plot(time, population1, color='blue', label='Effector Cells')
+    ax2.plot(time, population2, color='red', label='Tumor Cells')
+    ax2.plot(time, population3, color='green', label='IL-2 Levels')
+    ax2.set_title("Populations over Time")
+    ax2.set_xlabel('Time')
+    ax2.set_ylabel('Population')
+    
+    yrange_pop = None
+    if yrange_pop is not None:
+        ax2.set_ylim(yrange_pop)
+    ax2.grid(True)
+    ax2.legend(loc='upper right')
+
+    axes[0].figure.suptitle(title)

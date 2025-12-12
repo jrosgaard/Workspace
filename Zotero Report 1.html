@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline' data:">
+		<title>Zotero Report</title>
+		<link rel="stylesheet" type="text/css" href="data:text/css;base64,Ym9keSB7Cgljb2xvci1zY2hlbWU6IGxpZ2h0IGRhcms7CgkvKiBUaGVzZSBzaG91bGQgYmUgdGhlIGRlZmF1bHRzLCBidXQganVzdCBpbiBjYXNlOiAqLwoJYmFja2dyb3VuZDogQ2FudmFzOwoJY29sb3I6IENhbnZhc1RleHQ7Cn0KCmEgewoJdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7Cn0KCmJvZHkgewoJcGFkZGluZzogMDsKfQoKdWwucmVwb3J0IGxpLml0ZW0gewoJYm9yZGVyLXRvcDogNHB4IHNvbGlkICM1NTU7CglwYWRkaW5nLXRvcDogMWVtOwoJcGFkZGluZy1sZWZ0OiAxZW07CglwYWRkaW5nLXJpZ2h0OiAxZW07CgltYXJnaW4tYm90dG9tOiAyZW07Cn0KCmgxLCBoMiwgaDMsIGg0LCBoNSwgaDYgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDIgewoJbWFyZ2luOiAwIDAgLjVlbTsKfQoKaDIucGFyZW50SXRlbSB7Cglmb250LXdlaWdodDogNjAwOwoJZm9udC1zaXplOiAxZW07CglwYWRkaW5nOiAwIDAgLjVlbTsKCWJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2NjOwp9CgovKiBJZiBjb21iaW5pbmcgY2hpbGRyZW4sIGRpc3BsYXkgcGFyZW50IHNsaWdodGx5IGxhcmdlciAqLwp1bC5yZXBvcnQuY29tYmluZUNoaWxkSXRlbXMgaDIucGFyZW50SXRlbSB7Cglmb250LXNpemU6IDEuMWVtOwoJcGFkZGluZy1ib3R0b206IC43NWVtOwoJbWFyZ2luLWJvdHRvbTogLjRlbTsKfQoKaDIucGFyZW50SXRlbSAudGl0bGUgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDMgewoJbWFyZ2luLWJvdHRvbTogLjZlbTsKCWZvbnQtd2VpZ2h0OiA2MDAgIWltcG9ydGFudDsKCWZvbnQtc2l6ZTogMWVtOwoJZGlzcGxheTogYmxvY2s7Cn0KCi8qIE1ldGFkYXRhIHRhYmxlICovCnRoIHsKCXZlcnRpY2FsLWFsaWduOiB0b3A7Cgl0ZXh0LWFsaWduOiByaWdodDsKCXdpZHRoOiAxNSU7Cgl3aGl0ZS1zcGFjZTogbm93cmFwOwp9Cgp0ZCB7CglwYWRkaW5nLWxlZnQ6IC41ZW07Cn0KCgp1bC5yZXBvcnQsIHVsLm5vdGVzLCB1bC50YWdzIHsKCWxpc3Qtc3R5bGU6IG5vbmU7CgltYXJnaW4tbGVmdDogMDsKCXBhZGRpbmctbGVmdDogMDsKfQoKLyogVGFncyAqLwpoMy50YWdzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLnRhZ3MgewoJbGluZS1oZWlnaHQ6IDEuNzVlbTsKCWxpc3Qtc3R5bGU6IG5vbmU7Cn0KCnVsLnRhZ3MgbGkgewoJZGlzcGxheTogaW5saW5lOwp9Cgp1bC50YWdzIGxpOm5vdCg6bGFzdC1jaGlsZCk6YWZ0ZXIgewoJY29udGVudDogJywgJzsKfQoKCi8qIENoaWxkIG5vdGVzICovCmgzLm5vdGVzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLm5vdGVzIHsKCW1hcmdpbi1ib3R0b206IDEuMmVtOwp9Cgp1bC5ub3RlcyA+IGxpOmZpcnN0LWNoaWxkIHAgewoJbWFyZ2luLXRvcDogMDsKfQoKdWwubm90ZXMgPiBsaSB7CglwYWRkaW5nOiAuN2VtIDA7Cn0KCnVsLm5vdGVzID4gbGk6bm90KDpsYXN0LWNoaWxkKSB7Cglib3JkZXItYm90dG9tOiAxcHggI2NjYyBzb2xpZDsKfQoKCnVsLm5vdGVzID4gbGkgcDpmaXJzdC1jaGlsZCB7CgltYXJnaW4tdG9wOiAwOwp9Cgp1bC5ub3RlcyA+IGxpIHA6bGFzdC1jaGlsZCB7CgltYXJnaW4tYm90dG9tOiAwOwp9CgovKiBBZGQgcXVvdGF0aW9uIG1hcmtzIGFyb3VuZCBibG9ja3F1b3RlICovCnVsLm5vdGVzID4gbGkgYmxvY2txdW90ZSBwOm5vdCg6ZW1wdHkpOmJlZm9yZSwKbGkubm90ZSBibG9ja3F1b3RlIHA6bm90KDplbXB0eSk6YmVmb3JlIHsKCWNvbnRlbnQ6ICfigJwnOwp9Cgp1bC5ub3RlcyA+IGxpIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyLApsaS5ub3RlIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpsYXN0LWNoaWxkOmFmdGVyIHsKCWNvbnRlbnQ6ICfigJ0nOwp9CgovKiBQcmVzZXJ2ZSB3aGl0ZXNwYWNlIG9uIHBsYWludGV4dCBub3RlcyAqLwp1bC5ub3RlcyBsaSBwLnBsYWludGV4dCwgbGkubm90ZSBwLnBsYWludGV4dCwgZGl2Lm5vdGUgcC5wbGFpbnRleHQgewoJd2hpdGUtc3BhY2U6IHByZS13cmFwOwp9CgovKiBEaXNwbGF5IHRhZ3Mgd2l0aGluIGNoaWxkIG5vdGVzIGlubGluZSAqLwp1bC5ub3RlcyBoMy50YWdzIHsKCWRpc3BsYXk6IGlubGluZTsKCWZvbnQtc2l6ZTogMWVtOwp9Cgp1bC5ub3RlcyBoMy50YWdzOmFmdGVyIHsKCWNvbnRlbnQ6ICcgJzsKfQoKdWwubm90ZXMgdWwudGFncyB7CglkaXNwbGF5OiBpbmxpbmU7Cn0KCnVsLm5vdGVzIHVsLnRhZ3MgbGk6bm90KDpsYXN0LWNoaWxkKTphZnRlciB7Cgljb250ZW50OiAnLCAnOwp9CgoKLyogQ2hpbGQgYXR0YWNobWVudHMgKi8KaDMuYXR0YWNobWVudHMgewoJZm9udC1zaXplOiAxLjFlbTsKfQoKdWwuYXR0YWNobWVudHMgbGkgewoJcGFkZGluZy10b3A6IC41ZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHsKCW1hcmdpbi1sZWZ0OiAyZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGRpdi5ub3RlIHA6Zmlyc3QtY2hpbGQgewoJbWFyZ2luLXRvcDogLjc1ZW07Cn0KCmRpdiB0YWJsZSB7Cglib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOwp9CgpkaXYgdGFibGUgdGQsIGRpdiB0YWJsZSB0aCB7Cglib3JkZXI6IDFweCAjY2NjIHNvbGlkOwoJYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsKCXdvcmQtYnJlYWs6IGJyZWFrLWFsbDsKfQoKZGl2IHRhYmxlIHRkIHA6ZW1wdHk6OmFmdGVyLCBkaXYgdGFibGUgdGggcDplbXB0eTo6YWZ0ZXIgewoJY29udGVudDogIlwwMGEwIjsKfQoKZGl2IHRhYmxlIHRkICo6Zmlyc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmZpcnN0LWNoaWxkIHsKCW1hcmdpbi10b3A6IDA7Cn0KCmRpdiB0YWJsZSB0ZCAqOmxhc3QtY2hpbGQsIGRpdiB0YWJsZSB0aCAqOmxhc3QtY2hpbGQgewoJbWFyZ2luLWJvdHRvbTogMDsKfQo=">
+		<link rel="stylesheet" type="text/css" media="screen,projection" href="data:text/css;base64,LyogR2VuZXJpYyBzdHlsZXMgKi8KYm9keSB7Cglmb250OiA2Mi41JSBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cgl3aWR0aDogNzgwcHg7CgltYXJnaW46IDAgYXV0bzsKfQoKaDIgewoJZm9udC1zaXplOiAxLjVlbTsKCWxpbmUtaGVpZ2h0OiAxLjVlbTsKCWZvbnQtZmFtaWx5OiBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cn0KCnAgewoJbGluZS1oZWlnaHQ6IDEuNWVtOwp9CgphOmFueS1saW5rIHsKCWNvbG9yOiAjOTAwOwp9CgphOmhvdmVyLCBhOmFjdGl2ZSB7Cgljb2xvcjogIzc3NzsKfQoKQG1lZGlhIChwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykgewoJYTphbnktbGluayB7CgkJY29sb3I6ICNmMDA7Cgl9CgoJYTpob3ZlciwgYTphY3RpdmUgewoJCWNvbG9yOiAjOTk5OwoJfQp9CgoKdWwucmVwb3J0IHsKCWZvbnQtc2l6ZTogMS40ZW07Cgl3aWR0aDogNjgwcHg7CgltYXJnaW46IDAgYXV0bzsKCXBhZGRpbmc6IDIwcHggMjBweDsKfQoKLyogTWV0YWRhdGEgdGFibGUgKi8KdGFibGUgewoJYm9yZGVyOiAxcHggI2NjYyBzb2xpZDsKCW92ZXJmbG93OiBhdXRvOwoJd2lkdGg6IDEwMCU7CgltYXJnaW46IC4xZW0gYXV0byAuNzVlbTsKCXBhZGRpbmc6IDAuNWVtOwp9Cg==">
+		<link rel="stylesheet" type="text/css" media="print" href="data:text/css;base64,Ym9keSB7Cglmb250OiAxMnB0ICJUaW1lcyBOZXcgUm9tYW4iLCBUaW1lcywgR2VvcmdpYSwgc2VyaWY7CgltYXJnaW46IDA7Cgl3aWR0aDogYXV0bzsKfQoKLyogUGFnZSBCcmVha3MgKHBhZ2UtYnJlYWstaW5zaWRlIG9ubHkgcmVjb2duaXplZCBieSBPcGVyYSkgKi8KaDEsIGgyLCBoMywgaDQsIGg1LCBoNiB7CglwYWdlLWJyZWFrLWFmdGVyOiBhdm9pZDsKCXBhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZDsKfQoKdWwsIG9sLCBkbCB7CglwYWdlLWJyZWFrLWluc2lkZTogYXZvaWQ7Cgljb2xvci1hZGp1c3Q6IGV4YWN0Owp9CgpoMiB7Cglmb250LXNpemU6IDEuM2VtOwoJbGluZS1oZWlnaHQ6IDEuM2VtOwp9CgphIHsKCWNvbG9yOiBpbmhlcml0OwoJdGV4dC1kZWNvcmF0aW9uOiBub25lOwp9Cg==">
+	</head>
+	<body>
+		<ul class="report combineChildItems">
+			<li id="item_FMR752LK" class="item conferencePaper">
+			<h2>Periodic Chemotherapy Dose Schedule Optimization Using Genetic Algorithm</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Conference Paper</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Nadia Alam</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Munira Sultana</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>M. S. Alam</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>M. A. Al-Mamun</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>M. A. Hossain</td>
+					</tr>
+					<tr>
+						<th class="editor">Editor</th>
+						<td>Sigeru Omatu</td>
+					</tr>
+					<tr>
+						<th class="editor">Editor</th>
+						<td>José Neves</td>
+					</tr>
+					<tr>
+						<th class="editor">Editor</th>
+						<td>Juan M. Corchado Rodriguez</td>
+					</tr>
+					<tr>
+						<th class="editor">Editor</th>
+						<td>Juan F Paz Santana</td>
+					</tr>
+					<tr>
+						<th class="editor">Editor</th>
+						<td>Sara Rodríguez Gonzalez</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This paper presents a design method for optimal cancer 
+chemotherapy schedules using genetic algorithm (GA). The main objective 
+of chemotherapy is to reduce the number of cancer cells or eradicate 
+completely, if possible, after a predefined time with minimum toxic side
+ effects which is difficult to achieve using conventional clinical 
+methods due to narrow therapeutic indices of chemotherapy drugs. Three 
+drug scheduling schemes are proposed where GA is used to optimize the 
+doses and schedules by satisfying several treatment constraints. 
+Finally, a clinically relevant dose scheme with periodic nature is 
+proposed. Here Martin’s model is used to test the designed treatment 
+schedules and observe cell population, drug concentration and toxicity 
+during the treatment. The number of cancer cells is found zero at the 
+end of the treatment for all three cases with acceptable toxicity. So 
+the proposed design method clearly shows effectiveness in planning 
+chemotherapy schedules.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2013</td>
+					</tr>
+					<tr>
+					<th>Place</th>
+						<td>Cham</td>
+					</tr>
+					<tr>
+					<th>Publisher</th>
+						<td>Springer International Publishing</td>
+					</tr>
+					<tr>
+					<th>ISBN</th>
+						<td>978-3-319-00551-5</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>503-511</td>
+					</tr>
+					<tr>
+					<th>Proceedings Title</th>
+						<td>Distributed Computing and Artificial Intelligence</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:50:56 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:50:56 PM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_98HQXP2X" class="item journalArticle">
+			<h2>Multi-objective optimal chemotherapy control model for cancer treatment</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>S. Algoul</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>M. S. Alam</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>M. A. Hossain</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>M. A. A. Majumder</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This article presents an investigation into the development of
+ a multi-objective optimal chemotherapy control model to reduce the 
+number of cancer cells after a number of fixed treatment cycles with 
+minimum side effects. Mathematical models for cancer chemotherapy are 
+designed to predict the number of tumour cells and control the tumour 
+growth during treatment. This requires an understanding of the system in
+ the absence of treatment and a description of the effects of the 
+treatment. In order to achieve multi-objective optimal control model, we
+ used the proportional, integral and derivative (PID) and I-PD (modified
+ PID with Integrator used as series) controllers based on Martin’s model
+ for drug concentration. To the best of our knowledge, this is the first
+ PID/IPD-based optimal chemotherapy control model used to investigate 
+the cancer treatment. The proposed control schemes are designed based on
+ the optimal solution of three objective functions, which include (i) 
+maximising tumour cell killing, for (ii) minimum toxicity, and (iii) 
+tolerable drug concentration. Multi-objective genetic algorithm (MOGA) 
+is used to find suitable parameters of controllers that trade-off among 
+design objectives considered in this work. The results of the different 
+optimal scheduling patterns of the proposed models are presented and 
+discussed through a set of experiments. Finally, the observations are 
+compared with the existing models in order to demonstrate the merits and
+ capabilities of the proposed multi-objective optimisation models. It is
+ noted that the proposed model offers best performance as compared to 
+any models reported earlier.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2011-01-01</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1007/s11517-010-0678-y">https://doi.org/10.1007/s11517-010-0678-y</a></td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>49</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>51-65</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Medical &amp; Biological Engineering &amp; Computing</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1007/s11517-010-0678-y">10.1007/s11517-010-0678-y</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>Medical &amp; Biological Engineering &amp; Computing</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1741-0444</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>12/11/2025, 11:16:50 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>12/11/2025, 11:16:50 AM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_7HMEVUHH" class="item journalArticle">
+			<h2>Mathematical model for IL-2-based cancer immunotherapy</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Megan Dixon</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Tuan Anh Phan</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>J.C. Dallon</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Jianjun Paul Tian</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>A basic mathematical model for IL-2-based cancer immunotherapy
+ is proposed and studied. Our analysis shows that the outcome of therapy
+ is mainly determined by three parameters, the relative death rate of 
+CD4+ T cells, the relative death rate of CD8+ T cells, and the dose of 
+IL-2 treatment. Minimal equilibrium tumor size can be reached with a 
+large dose of IL-2 in the case that CD4+ T cells die out. However, in 
+cases where CD4+ and CD8+ T cells persist, the final tumor size is 
+independent of the IL-2 dose and is given by the relative death rate of 
+CD4+ T cells. Two groups of in silico clinical trials show some 
+short-term behaviors of IL-2 treatment. IL-2 administration can slow the
+ proliferation of CD4+ T cells, while high doses for a short period of 
+time over several days transiently increase the population of CD8+ T 
+cells during treatment before it recedes to its equilibrium. IL-2 
+administration for a short period of time over many days suppresses the 
+tumor population for a longer time before approaching its steady-state 
+levels. This implies that intermittent administration of IL-2 may be a 
+good strategy for controlling tumor size.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2024-06-01</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.sciencedirect.com/science/article/pii/S0025556424000476">https://www.sciencedirect.com/science/article/pii/S0025556424000476</a></td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>372</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>109187</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Mathematical Biosciences</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1016/j.mbs.2024.109187">10.1016/j.mbs.2024.109187</a></td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>Mathematical Biosciences</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0025-5564</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:50:13 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:50:13 PM</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>CD4 T cell</li>
+					<li>CD8 T cell</li>
+					<li>IL-2</li>
+					<li>Immunotherapy</li>
+				</ul>
+			</li>
+
+
+			<li id="item_BQICJT3W" class="item journalArticle">
+			<h2>Pygad: An intuitive genetic algorithm python library</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Ahmed Fawzy Gad</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2023</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Springer</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>1–14</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Multimedia Tools and Applications</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:38:18 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:38:18 PM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_AKHKTCYN" class="item journalArticle">
+			<h2>Dynamically modeling the effective range of IL-2 dosage in the treatment of systemic lupus erythematosus</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Xin Gao</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Jing He</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Xiaolin Sun</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Fangting Li</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Systemic lupus erythematosus (SLE) is a complex systemic 
+autoimmune disease characterized by an overactive immune response to 
+self-antigen. The overactivation of CD4+ Foxp3? conventional 
+T&nbsp;cells (Tcons) and the inactivation of CD4+ CD25+ Foxp3+ 
+regulatory T&nbsp;cells (Tregs) play important roles in the progression 
+of SLE. Clinical trials showed that low-dose interleukin-2 (IL-2) is 
+effective in treating SLE. Here, we developed a mathematical model 
+involving Tcons, Tregs, natural killer (NK) cells, and IL-2 to simulate 
+the dynamic processes involved in the treatment of SLE. We found an 
+effective range of IL-2 dosage defined by the Tcon/Treg ratio in SLE 
+treatment, termed the IL-2 dosage therapeutic window (IDTW). Our results
+ showed that high levels of self-antigen result in a narrow IDTW and 
+high post-treatment Tcon/Treg ratio. Furthermore, we proposed a 
+classification method based on the ratio of pre-treatment Treg to CD4+ 
+T&nbsp;cells to predict the treatment outcome of SLE patients.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2022-09-16</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1016/j.isci.2022.104911">https://doi.org/10.1016/j.isci.2022.104911</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>11/13/2025, 7:00:00 PM</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Elsevier</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>25</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>iScience</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1016/j.isci.2022.104911">10.1016/j.isci.2022.104911</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>9</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2589-0042</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:51:50 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:51:50 PM</td>
+					</tr>
+				</tbody></table>
+				<h3 class="notes">Notes:</h3>
+				<ul class="notes">
+					<li id="item_3FTK3IRH">
+<div><p>doi: 10.1016/j.isci.2022.104911</p></div>
+					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_QYVB62UY" class="item journalArticle">
+			<h2>Standing Variations Modeling Captures Inter-Individual 
+Heterogeneity in a Deterministic Model of Prostate Cancer Response to 
+Combination Therapy</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Harsh V. Jain</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Inmaculada C. Sorribes</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Samuel K. Handelman</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Johnna Barnaby</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Trachette L. Jackson</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Sipuleucel-T (Provenge) is the first live cell vaccine 
+approved for advanced, hormonally refractive prostate cancer. However, 
+survival benefit is modest and the optimal combination or schedule of 
+sipuleucel-T with androgen depletion remains unknown. We employ a 
+nonlinear dynamical systems approach to modeling the response of 
+hormonally refractive prostate cancer to sipuleucel-T. Our mechanistic 
+model incorporates the immune response to the cancer elicited by 
+vaccination, and the effect of androgen depletion therapy. Because only a
+ fraction of patients benefit from sipuleucel-T treatment, 
+inter-individual heterogeneity is clearly crucial. Therefore, we 
+introduce our novel approach, Standing Variations Modeling, which 
+exploits inestimability of model parameters to capture heterogeneity in a
+ deterministic model. We use data from mouse xenograft experiments to 
+infer distributions on parameters critical to tumor growth and to the 
+resultant immune response. Sampling model parameters from these 
+distributions allows us to represent heterogeneity, both at the level of
+ the tumor cells and the individual (mouse) being treated. Our model 
+simulations explain the limited success of sipuleucel-T observed in 
+practice, and predict an optimal combination regime that maximizes 
+predicted efficacy. This approach will generalize to a range of emerging
+ cancer immunotherapies.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2021</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>13</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Cancers</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.3390/cancers13081872">10.3390/cancers13081872</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2072-6694</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:53:04 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:53:04 PM</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>ADT</li>
+					<li>immunotherapy</li>
+					<li>mathematical model</li>
+					<li>prostate cancer</li>
+					<li>provenge</li>
+					<li>standing variations</li>
+				</ul>
+			</li>
+
+
+			<li id="item_TYJA2B3L" class="item journalArticle">
+			<h2>Optimal Treatment Strategy for a Tumor Model under Immune Suppression</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Kwang Su Kim</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Giphil Cho</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Il Hyo Jung</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>We propose a mathematical model describing tumor-immune 
+interactions under immune suppression. These days evidences indicate 
+that the immune suppression related to cancer contributes to its 
+progression. The mathematical model for tumor-immune interactions would 
+provide a new methodology for more sophisticated treatment options of 
+cancer. To do this we have developed a system of 11 ordinary 
+differential equations including the movement, interaction, and 
+activation of NK cells, CD8+T-cells, CD4+T cells, regulatory T cells, 
+and dendritic cells under the presence of tumor and cytokines and the 
+immune interactions. In addition, we apply two control therapies, 
+immunotherapy and chemotherapy to the model in order to control growth 
+of tumor. Using optimal control theory and numerical simulations, we 
+obtain appropriate treatment strategies according to the ratio of the 
+cost for two therapies, which suggest an optimal timing of each 
+administration for the two types of models, without and with 
+immunosuppressive effects. These results mean that the immune 
+suppression can have an influence on treatment strategies for cancer.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2014</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://onlinelibrary.wiley.com/doi/abs/10.1155/2014/206287">https://onlinelibrary.wiley.com/doi/abs/10.1155/2014/206287</a></td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1155/2014/206287</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>2014</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>206287</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Computational and Mathematical Methods in Medicine</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/https://doi.org/10.1155/2014/206287">https://doi.org/10.1155/2014/206287</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>12/11/2025, 11:21:40 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>12/11/2025, 11:21:40 AM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_IP5WAWHJ" class="item journalArticle">
+			<h2>Modeling immunotherapy of the tumor – immune interaction</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Denise Kirschner</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>John Carl Panetta</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>A number of lines of evidence suggest that immunotherapy with 
+the cytokine interleukin-2 (IL-2) may boost the immune system to fight 
+tumors. CD4+ T cells, the cells that orchestrate the immune response, 
+use these cytokines as signaling mechanisms for immune-response 
+stimulation as well as lymphocyte stimulation, growth, and 
+differentiation. Because tumor cells begin as ‘self’, the immune system 
+may not respond in an effective way to eradicate them. Adoptive cellular
+ immunotherapy can potentially restore or enhance these effects. We 
+illustrate through mathematical modeling the dynamics between tumor 
+cells, immune-effector cells, and IL-2. These efforts are able to 
+explain both short tumor oscillations in tumor sizes as well as 
+long-term tumor relapse. We then explore the effects of adoptive 
+cellular immunotherapy on the model and describe under what 
+circumstances the tumor can be eliminated.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1998-09-01</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1007/s002850050127">https://doi.org/10.1007/s002850050127</a></td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>37</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>235-252</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Journal of Mathematical Biology</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1007/s002850050127">10.1007/s002850050127</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>Journal of Mathematical Biology</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1432-1416</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:22:33 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:22:33 PM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_XNHPXTIP" class="item journalArticle">
+			<h2>Addressing current challenges in cancer immunotherapy with mathematical and computational modelling</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Anna Konstorum</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Anthony T. Vella</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Adam J. Adler</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Reinhard C. Laubenbacher</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2017-06-28</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1098/rsif.2017.0150">https://doi.org/10.1098/rsif.2017.0150</a></td>
+					</tr>
+					<tr>
+					<th>Accessed</th>
+						<td>11/13/2025, 7:00:00 PM</td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Royal Society</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>14</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>20170150</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Journal of The Royal Society Interface</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1098/rsif.2017.0150">10.1098/rsif.2017.0150</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>131</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>Journal of The Royal Society Interface</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:52:26 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:52:26 PM</td>
+					</tr>
+				</tbody></table>
+				<h3 class="notes">Notes:</h3>
+				<ul class="notes">
+					<li id="item_YIWUX9L6">
+<div><p>doi: 10.1098/rsif.2017.0150</p></div>
+					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_VVBJK7T9" class="item journalArticle">
+			<h2>The role of innate immune cells in the colorectal cancer tumor microenvironment and advances in anti-tumor therapy research</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Wenxuan Liu</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Tianrui Kuang</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Li Liu</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Wenhong Deng</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Innate immune cells in the colorectal cancer microenvironment 
+mainly include macrophages, neutrophils, natural killer cells, dendritic
+ cells and bone marrow-derived suppressor cells. They play a pivotal 
+role in tumor initiation and progression through the secretion of 
+diverse cytokines, chemokines, and other factors that govern these 
+processes. Colorectal cancer is a common malignancy of the 
+gastrointestinal tract, and understanding the role of innate immune 
+cells in the microenvironment of CRC may help to improve therapeutic 
+approaches to CRC and increase the good prognosis. In this review, we 
+comprehensively explore the pivotal role of innate immune cells in the 
+initiation and progression of colorectal cancer (CRC), alongside an 
+extensive evaluation of the current landscape of innate immune 
+cell-based immunotherapies, thereby offering valuable insights for 
+future research strategies and clinical trials.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2024</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1407449">https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1407449</a></td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>Volume 15 - 2024</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Frontiers in Immunology</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.3389/fimmu.2024.1407449">10.3389/fimmu.2024.1407449</a></td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1664-3224</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>12/10/2025, 10:01:26 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>12/10/2025, 10:01:26 AM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_6SJBBALG" class="item journalArticle">
+			<h2>Optimal control drug scheduling of cancer chemotherapy</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>R. B. Martin</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>This optimal control model of cancer chemotherapy constructs 
+drug schedules that most effectively reduce the size of a tumour after a
+ fixed period of treatment has elapsed. A constraint is imposed so that 
+the tumour size must decrease at or faster than a specified rate. The 
+system is solved using an established numerical solution technique known
+ as control parametrization, and analytical gradients are constructed of
+ all the constraints so that the resulting non-linear programming 
+problem is solvable using currently available software. An interesting 
+feature of the constraints on the rate of decrease of the tumour size is
+ that the corresponding co-state functions are discontinuous in time. 
+Numerical solutions suggest that the best way of reducing the tumour 
+burden after a fixed period of treatment is to keep the rate of decrease
+ of the tumour size to a minimum initially, and then give high-intensity
+ treatment towards the end of the treatment period.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>1992</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.sciencedirect.com/science/article/pii/000510989290054J">https://www.sciencedirect.com/science/article/pii/000510989290054J</a></td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>28</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>1113-1123</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Automatica</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/https://doi.org/10.1016/0005-1098(92)90054-J">https://doi.org/10.1016/0005-1098(92)90054-J</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>6</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0005-1098</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>12/11/2025, 11:16:19 AM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>12/11/2025, 11:16:19 AM</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Biomedical</li>
+					<li>mathematical modeling</li>
+					<li>non-linear programming</li>
+					<li>optimal control</li>
+				</ul>
+			</li>
+
+
+			<li id="item_SZC8HDYX" class="item journalArticle">
+			<h2>A Memetic Algorithm for Multiple-Drug Cancer Chemotherapy Schedule Optimization</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>S. -M. Tse</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Y. Liang</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>K. -S. Leung</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>K. -H. Lee</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>T. S. -K. Mok</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>Feb. 2007</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>37</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>84-91</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics)</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1109/TSMCB.2006.883265">10.1109/TSMCB.2006.883265</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics)</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1941-0492</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:51:09 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:51:09 PM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_SMK8R2BA" class="item journalArticle">
+			<h2>Metaheuristics and Pontryagin’s minimum principle for optimal 
+therapeutic protocols in cancer immunotherapy: a case study and methods 
+comparison</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Sima Sarv Ahrabi</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Alireza Momenzadeh</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>In this paper, the performance appropriateness of 
+population-based metaheuristics for immunotherapy protocols is 
+investigated on a comparative basis while the goal is to stimulate the 
+immune system to defend against cancer. For this purpose, genetic 
+algorithm and particle swarm optimization are employed and compared with
+ modern method of Pontryagin’s minimum principle (PMP). To this end, a 
+well-known mathematical model of cell-based cancer immunotherapy is 
+described and examined to formulate the optimal control problem in which
+ the objective is the annihilation of tumour cells by using the minimum 
+amount of cultured immune cells. In this regard, the main aims are: (i) 
+to introduce a single-objective optimization problem and to design the 
+considered metaheuristics in order to appropriately deal with it; (ii) 
+to use the PMP in order to obtain the necessary conditions for 
+optimality, i.e. the governing boundary value problem; (iii) to measure 
+the results obtained by using the proposed metaheuristics against those 
+results obtained by using an indirect approach called forward-backward 
+sweep method; and finally (iv) to produce a set of optimal treatment 
+strategies by formulating the problem in a bi-objective form and 
+demonstrating its advantages over single-objective optimization problem.
+ A set of obtained results conforms the performance capabilities of the 
+considered metaheuristics.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2020-08-01</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1007/s00285-020-01525-7">https://doi.org/10.1007/s00285-020-01525-7</a></td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>81</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>691-723</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Journal of Mathematical Biology</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1007/s00285-020-01525-7">10.1007/s00285-020-01525-7</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>2</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>Journal of Mathematical Biology</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1432-1416</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>12/4/2025, 12:06:40 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>12/4/2025, 12:06:40 PM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_9LPQC5RA" class="item journalArticle">
+			<h2>Triggering and enhancing chaos with a prescribed target Lyapunov exponent using optimized perturbations of minimum power</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>C. Y. Soong</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>W. T. Huang</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2007-03-13</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevE.75.036206">https://link.aps.org/doi/10.1103/PhysRevE.75.036206</a></td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: American Physical Society</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>75</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>036206</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Physical Review E</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevE.75.036206">10.1103/PhysRevE.75.036206</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>Phys. Rev. E</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:23:36 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:23:36 PM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_6N7FFC4F" class="item journalArticle">
+			<h2>Controlling chaos with weak periodic signals optimized by a genetic algorithm</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>C. Y. Soong</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>W. T. Huang</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>F. P. Lin</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>P. Y. Tzeng</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2004-07-23</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevE.70.016211">https://link.aps.org/doi/10.1103/PhysRevE.70.016211</a></td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: American Physical Society</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>70</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>016211</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Physical Review E</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevE.70.016211">10.1103/PhysRevE.70.016211</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>Phys. Rev. E</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:24:11 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:24:11 PM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+
+			<li id="item_SLE46GV3" class="item journalArticle">
+			<h2>Ultimate dynamics of the Kirschner–Panetta model: Tumor eradication and related problems</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Konstantin E. Starkov</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Alexander P. Krishchenko</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>In this paper we consider the ultimate dynamics of the 
+Kirschner–Panetta model which was created for studying the immune 
+response to tumors under special types of immunotherapy. New ultimate 
+upper bounds for compact invariant sets of this model are given, as well
+ as sufficient conditions for the existence of a positively invariant 
+polytope. We establish three types of conditions for the nonexistence of
+ compact invariant sets in the domain of the tumor-cell population. Our 
+main results are two types of conditions for global tumor elimination 
+depending on the ratio between the proliferation rate of the immune 
+cells and their mortality rate. These conditions are described in terms 
+of simple algebraic inequalities imposed on model parameters and 
+treatment parameters. Our theoretical studies of ultimate dynamics are 
+complemented by numerical simulation results.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2017-10-17</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.sciencedirect.com/science/article/pii/S0375960117308058">https://www.sciencedirect.com/science/article/pii/S0375960117308058</a></td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>381</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>3409-3416</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>Physics Letters A</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1016/j.physleta.2017.08.048">10.1016/j.physleta.2017.08.048</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>39</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>Physics Letters A</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>0375-9601</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:50:40 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:50:40 PM</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">Tags:</h3>
+				<ul class="tags">
+					<li>Compact invariant set</li>
+					<li>Global stability</li>
+					<li>Kirschner–Panetta tumor model</li>
+					<li>Ultimate dynamics</li>
+				</ul>
+			</li>
+
+
+			<li id="item_79Y9Q8FS" class="item journalArticle">
+			<h2>Towards Predictive Computational Models of Oncolytic Virus Therapy: Basis for Experimental Validation and Model Selection</h2>
+				<table>
+					<tbody><tr>
+						<th>Item Type</th>
+						<td>Journal Article</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Dominik Wodarz</td>
+					</tr>
+					<tr>
+						<th class="author">Author</th>
+						<td>Natalia Komarova</td>
+					</tr>
+					<tr>
+					<th>Abstract</th>
+						<td>Oncolytic viruses are viruses that specifically infect cancer 
+cells and kill them, while leaving healthy cells largely intact. Their 
+ability to spread through the tumor makes them an attractive therapy 
+approach. While promising results have been observed in clinical trials,
+ solid success remains elusive since we lack understanding of the basic 
+principles that govern the dynamical interactions between the virus and 
+the cancer. In this respect, computational models can help experimental 
+research at optimizing treatment regimes. Although preliminary 
+mathematical work has been performed, this suffers from the fact that 
+individual models are largely arbitrary and based on biologically 
+uncertain assumptions. Here, we present a general framework to study the
+ dynamics of oncolytic viruses that is independent of uncertain and 
+arbitrary mathematical formulations. We find two categories of dynamics,
+ depending on the assumptions about spatial constraints that govern that
+ spread of the virus from cell to cell. If infected cells are mixed 
+among uninfected cells, there exists a viral replication rate threshold 
+beyond which tumor control is the only outcome. On the other hand, if 
+infected cells are clustered together (e.g. in a solid tumor), then we 
+observe more complicated dynamics in which the outcome of therapy might 
+go either way, depending on the initial number of cells and viruses. We 
+fit our models to previously published experimental data and discuss 
+aspects of model validation, selection, and experimental design. This 
+framework can be used as a basis for model selection and validation in 
+the context of future, more detailed experimental studies. It can 
+further serve as the basis for future, more complex models that take 
+into account other clinically relevant factors such as immune responses.</td>
+					</tr>
+					<tr>
+					<th>Date</th>
+						<td>2009-01-30</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1371/journal.pone.0004271">https://doi.org/10.1371/journal.pone.0004271</a></td>
+					</tr>
+					<tr>
+					<th>Extra</th>
+						<td>Publisher: Public Library of Science</td>
+					</tr>
+					<tr>
+					<th>Volume</th>
+						<td>4</td>
+					</tr>
+					<tr>
+					<th>Pages</th>
+						<td>e4271</td>
+					</tr>
+					<tr>
+					<th>Publication</th>
+						<td>PLOS ONE</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1371/journal.pone.0004271">10.1371/journal.pone.0004271</a></td>
+					</tr>
+					<tr>
+					<th>Issue</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>Journal Abbr</th>
+						<td>PLOS ONE</td>
+					</tr>
+					<tr>
+					<th>Date Added</th>
+						<td>11/13/2025, 11:24:45 PM</td>
+					</tr>
+					<tr>
+					<th>Modified</th>
+						<td>11/13/2025, 11:24:45 PM</td>
+					</tr>
+				</tbody></table>
+			</li>
+
+		</ul>
+	
+</body></html>

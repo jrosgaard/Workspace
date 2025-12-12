@@ -1,5 +1,6 @@
 # This module comtains a data handling functions for reading CSV files saved from the main notebook.
 # It is called in the visualization and slider modules to load data for plotting.
+# It also contains a function to extract features from multiple data files for analysis.
 
 # Imports
 import csv
@@ -52,3 +53,53 @@ def load_data(filepath):
             Fitness.append(float(row['Fitness']))
     
     return t, tau, x, y, z, E, T, IL, s_1_array, s_2_array, Fitness
+
+
+# function to extract features from data files
+def extract_features(filepath, antigenicity_values):
+    import pandas as pd
+
+    amplitudes = []
+    c_vals = []
+    max_vals1 = []
+    max_vals2 = []
+    ave_vals1 = []
+    ave_vals2 = []
+    bifur_c0 = []
+    bifur_y0 = []
+
+    # find amplitudes for each file
+    for idx, f in enumerate(filepath):
+        df = pd.read_csv(f)
+        
+        y = df["y"].values
+        tail = y[-500:]
+        center1 = y[500:1000]
+        center2 = y[1000:1500]
+
+        amp = tail.max() - tail.min()
+
+        max_val1 = center1.max()
+        max_val2 = center2.max()
+        ave_val1 = center1.mean()
+        ave_val2 = center2.mean()
+
+        # store per run data
+        amplitudes.append(amp)
+        c_vals.append(antigenicity_values[idx])
+        max_vals1.append(max_val1)
+        max_vals2.append(max_val2)
+        ave_vals1.append(ave_val1)
+        ave_vals2.append(ave_val2)
+
+    c_vals = np.array(c_vals)
+    amplitudes_0 = np.array(amplitudes)
+    max1_non = np.array(max_vals1)
+    max2_non =  np.array(max_vals2)
+    ave1_non = np.array(ave_vals1)
+    ave2_non = np.array(ave_vals2)
+
+
+    features = np.vstack((c_vals, amplitudes_0, max1_non, max2_non, ave1_non, ave2_non)).T
+    return features, c_vals, amplitudes_0
+

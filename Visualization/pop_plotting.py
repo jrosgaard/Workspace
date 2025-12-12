@@ -1,6 +1,7 @@
 # Population plotting function
+# This module contains functions for plotting population dynamics and fitness over generations.
 
-# import plotly for interactive plots
+# import plotly
 import plotly.express as px
 import plotly.io as pio
 pio.renderers.default = "plotly_mimetype"

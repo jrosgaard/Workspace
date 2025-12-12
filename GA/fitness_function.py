@@ -1,15 +1,12 @@
 # Genetic Algorithm module
-# This version modified to work with non-dimensional variables x, y, z
+# This version made to work with non-dimensional variables x, y, z
 
+import numpy as np
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import numpy as np
-
-
 from Model.KP_model import dx_dt, dy_dt, dz_dt
-#from Main import x ,y, z
 
 class GeneticAlgorithm:
     """
@@ -29,7 +26,7 @@ class GeneticAlgorithm:
         y = ga_instance.environment['y']
         z = ga_instance.environment['z']
 
-        # Extract genes from solution
+        # Extract genes from solution of the GA
         genes1 = solution[0:4]
         genes2 = solution[4:8]
 

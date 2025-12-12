@@ -1,4 +1,8 @@
 # Kirschner-Panetta Model
+# This module contains the non-dimensional Kirschner-Panetta model equations for
+# effector cells (x), tumor cells (y), and IL-2 concentration (z).
+# There is then a coupled function for integration that uses these equations.
+# It also includes a non-dimensionalization function for the model parameters and a growth function (r_2, unused).
 
 # Non-dimensionalization function
 def nondim(E0=None, T0=None, IL0=None, t_s=None, c_in=None, 
@@ -7,8 +11,10 @@ def nondim(E0=None, T0=None, IL0=None, t_s=None, c_in=None,
            s_1_in=None, s_2_in=None):
     """
     Non-dimensionalization of variables and parameters.
+    This function takes the dimensional parameters and returns their non-dimensional counterparts as defined in the KP model.
     """
     if E0 is None or T0 is None or IL0 is None or t_s is None:
+        # Raise error if required parameter is missing
         raise ValueError("E0, T0, IL0, and t_s must be provided for non-dimensionalization.")
     
     c = (c_in*T0) / (t_s*E0)
@@ -31,6 +37,7 @@ def nondim(E0=None, T0=None, IL0=None, t_s=None, c_in=None,
     return [c, p_1, g_1, mu_2, g_2, b, r_2, alpha, mu_3, p_2, g_3, s_1, s_2]
 
 # Non-dimensional Kirschner-Panetta eqs. for x, y, z
+
 def dx_dt(t, x, y, z, c, mu_2, p_1, g_1, s_1):
     """
     Scaled x equation.
@@ -77,6 +84,7 @@ def kp_coupled(t, state,
     """
     x, y, z = state # Unpack state variables
 
+    # calculate dxdt, dydt, dzdt
     dxdt = dx_dt(t, x, y, z, c, mu_2, p_1, g_1, s_1)
     dydt = dy_dt(t, y, x, z, r_2, b, alpha, g_2)
     dzdt = dz_dt(t, z, x, y, p_2, g_3, mu_3, s_2)

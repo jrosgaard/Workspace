@@ -1,7 +1,8 @@
 # Integration module
+# This module integrates the KP model equations dxdt, dydt, and dzdt using solve_ivp Runge-Kutta method.
+# The integration method could be changed later to include other models.
 
 # Imports
-from matplotlib.pyplot import step
 import scipy
 from scipy.integrate import solve_ivp
 import numpy as np
@@ -16,8 +17,7 @@ class kp_integrate:
 
     def integrate(self, state, params, t_span):
         """
-        Runga Kutta integrator.
-
+        Runge-Kutta integrator.
         Variables:
         time step
         state [x, y, z]

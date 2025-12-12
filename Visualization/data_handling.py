@@ -1,4 +1,7 @@
-# Data handling functions for reading CSV files
+# This module comtains a data handling functions for reading CSV files saved from the main notebook.
+# It is called in the visualization and slider modules to load data for plotting.
+
+# Imports
 import csv
 import os
 import numpy as np

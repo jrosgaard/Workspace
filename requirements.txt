@@ -28,3 +28,6 @@ requests
 
 # Genetic algorithm
 pygad
+
+# SciPy for integration
+scipy
